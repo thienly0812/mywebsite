@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRANG VÀNG DU LỊCH </title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        margin-bottom: 50px;
+      }
+      .container-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+      .container-overlay img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .container-overlay .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.519);
+      }
+      .title-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .title-content h1 {
+        text-align: center;
+        margin-top: 40px;
+        background: linear-gradient(#ffff, #00ff08);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 40px;
+        border: 1px solid white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        backdrop-filter: blur(5px);
+      }
+      .content {
+        max-width: 1000px;
+        display: flex;
+        margin: 0 auto;
+        margin-top: 50px;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.551);
+        border-radius: 5px;
+      }
+
+      .content img {
+        width: 95%;
+        object-fit: cover;
+        border-radius: 5px;
+        border: 2px solid white;
+      }
+
+      .content p {
+        color: white;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        padding: 10px;
+      }
+
+      .content iframe {
+        width: 100%;
+        height: 400px;
+        border-radius: 5px;
+      }
+
+      .content-audio {
+        justify-content: center;
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-overlay">
+      <div class="overlay"></div>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMJUBwBn6Mrp2NdwQosdOEg4m-iSmHNW_Zg&s"
+        alt=""
+      />
+    </div>
+    <div class="title-content">
+      <h1>TRANG VÀNG DU LỊCH </h1>
+    </div>
+    <div class="content">
+      <img
+	  width="400"
+        height="300"
+        src="data:image/jpeg;base64,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"
+        alt=""
+      />
+      <p>
+        Chùa Minh Đức tọa lạc tại Quảng Ngãi, là một ngôi chùa nổi tiếng không chỉ bởi kiến trúc độc đáo mà còn bởi lịch sử lâu đời và tinh thần văn hóa đậm đà. Chùa được xây dựng từ thế kỷ XIX, với kiến trúc hài hòa giữa phong cách cổ điển và hiện đại, mang đến cho du khách cảm giác thanh bình và tĩnh lặng.
+
+Bước vào chùa Minh Đức, du khách sẽ được chiêm ngưỡng những bức tượng Phật uy nghiêm, những bức tranh tường tinh xảo và những bộ hoành phi câu đối mang đầy ý nghĩa sâu sắc. Ngoài ra, khuôn viên chùa còn có những khu vườn xanh mát, với nhiều loại cây cối và hoa cỏ tạo nên không gian yên tĩnh, thư giãn.
+
+Không chỉ là nơi thờ phụng và tu hành, chùa Minh Đức còn là nơi tổ chức nhiều hoạt động văn hóa, lễ hội truyền thống và các chương trình từ thiện, thu hút đông đảo Phật tử và du khách từ khắp nơi về tham dự. Chùa Minh Đức thực sự là một điểm đến lý tưởng cho những ai muốn tìm hiểu về văn hóa Phật giáo và tìm kiếm sự bình an trong tâm hồn.
+      </p>
+    </div>
+    <div class="content">
+      <iframe
+        width="460"
+        height="315"
+        src="https://baoquangngai.vn/file/video/8a10a0d36ccebc89016ce0c6fa3e1b83/022024/20240221210227mdd_4.mp4"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="content content-audio">
+      <audio controls>
+        <source
+          src="https://c1-ex-swe.nixcdn.com/NhacCuaTui843/Thuyen-VickyZhaoTrieuVy-2831087.mp3?st=L2pF6AcOn3ooscRA4y6pMg&e=1739195185&a=1&p=0&r=a32810f39e6b5b20c0c4d9c201de5444&download=true"
+          type="audio/mpeg"
+        />
+      </audio>
+	  
+	  
+	 <div> 
+	  <p>Ngoài những giá trị văn hóa và tâm linh sâu sắc, Chùa Minh Đức còn thu hút du khách bởi cảnh quan thiên nhiên tuyệt đẹp xung quanh. Chùa được bao bọc bởi những ngọn đồi xanh tươi và dòng sông êm đềm, tạo nên một bức tranh thiên nhiên hữu tình. Đứng từ chùa, du khách có thể ngắm nhìn toàn cảnh Quảng Ngãi, với những cánh đồng lúa bát ngát, những ngôi làng cổ kính và những con đường uốn lượn.
+
+Đặc biệt, vào những ngày lễ lớn, chùa Minh Đức tổ chức các hoạt động lễ hội truyền thống, như lễ Vu Lan, lễ Phật Đản, thu hút hàng ngàn người tham dự. Đây là cơ hội tuyệt vời để du khách trải nghiệm và tìm hiểu về văn hóa Phật giáo Việt Nam, cũng như tham gia vào các hoạt động cộng đồng, như thả đèn hoa đăng, cầu nguyện và thiền định.
+
+Với sự kết hợp hoàn hảo giữa giá trị lịch sử, văn hóa và thiên nhiên, Chùa Minh Đức là điểm đến không thể bỏ qua khi du lịch Quảng Ngãi. Hãy đến và khám phá, bạn sẽ tìm thấy sự bình yên và những trải nghiệm đáng nhớ tại ngôi chùa này. </p>
+</div>
+</html>
